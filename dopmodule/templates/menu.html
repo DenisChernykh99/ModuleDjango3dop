@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
+    <title>Мой интернет магазин</title>
+</head>
+<body>
+    <header>
+        <h1>{% block pagename %}{% endblock %}</h1>
+    </header>
+    <main>
+        {% block menu %}
+
+        {% endblock %}
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    <footer>
+        <p>© 2025, Магазин Урбан</p>
+    </footer>
+</body>
+</html>

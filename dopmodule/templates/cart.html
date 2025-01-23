@@ -1,0 +1,14 @@
+{% extends 'menu.html' %}
+
+{% block pagename %}{{ title }}{% endblock %}
+
+{% block menu %}
+<h1><a href="/">Главная</a></h1>
+<h1><a href="/catalog">Магазин</a></h1>
+<h1><a href="/cart">Корзина</a></h1>
+{% endblock %}
+
+{% block content %}
+<p>{{ cart_info }}</p>
+<button><a href="/">На главную</a></button>
+{% endblock %}
