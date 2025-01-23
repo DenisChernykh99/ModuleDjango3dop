@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import main, magazine, cart, sign_up_by_html, sign_up_by_django
+from .views import main, magazine, cart, sign_up_by_html, sign_up_by_django, news
 
 app_name = 'myapp_admin'
 urlpatterns = [
@@ -10,4 +10,5 @@ urlpatterns = [
     path('cart/', cart),
     path('sign_by_html/', sign_up_by_html),
     path('sign_by_django/', sign_up_by_django),
+    path('news/', news),
 ]

@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from .forms import UserRegister
-from .models import Buyer, Game
+from .models import Buyer, Game, News
 from django.db import IntegrityError
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -96,3 +97,11 @@ def sign_up_by_django(request):
                 return render(request, 'registration_page.html', info)
 
     return render(request, 'registration_page.html', info)
+
+
+def news(request):
+    all_news = News.objects.all()
+    paginator = Paginator(all_news, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'news.html', {'page_obj': page_obj})

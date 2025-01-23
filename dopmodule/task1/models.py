@@ -38,3 +38,9 @@ class Game(models.Model):
 # Game.objects.get(id=2).buyer.set(adult_buyers)
 # priority_buyer = (Buyer.objects.get(id=3),)
 # Game.objects.get(id=1).buyer.set(priority_buyer)
+
+
+class News(models.Model):
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)

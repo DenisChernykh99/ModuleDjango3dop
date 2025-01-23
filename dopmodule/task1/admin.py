@@ -1,15 +1,19 @@
 from django.contrib import admin
-from .models import Buyer, Game
+from .models import Buyer, Game, News
 
 # Register your models here.
+
+# Регистрируем модель News
+admin.site.register(News)
+
 
 # Админка для модели Game
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
-    list_display = ('title', 'cost', 'size',) # Поля для отображения в списке
-    search_fields = ('title',) # Поля для поиска
-    list_filter = ('size', 'cost',) # Фильтрация по размеру и цене
-    list_per_page = 20 # Кол-во записей на странице
+    list_display = ('title', 'cost', 'size',)  # Поля для отображения в списке
+    search_fields = ('title',)  # Поля для поиска
+    list_filter = ('size', 'cost',)  # Фильтрация по размеру и цене
+    list_per_page = 20  # Кол-во записей на странице
 
 
 # Админка для модели Buyer
